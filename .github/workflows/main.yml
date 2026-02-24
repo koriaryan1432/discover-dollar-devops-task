@@ -22,13 +22,13 @@ jobs:
       - name: Build Backend
         uses: docker/build-push-action@v5
         with:
-          context: ./backend
+          context: ./crud-dd-task-mean-app/backend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
 
       - name: Build Frontend
         uses: docker/build-push-action@v5
         with:
-          context: ./frontend
+          context: ./crud-dd-task-mean-app/frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
