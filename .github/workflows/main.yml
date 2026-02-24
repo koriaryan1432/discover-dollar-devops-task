@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # This adds a "Run" button so we can start it manually!
+  workflow_dispatch:
 
 jobs:
   build:
@@ -22,13 +22,15 @@ jobs:
       - name: Build Backend
         uses: docker/build-push-action@v5
         with:
-          context: ./crud-dd-task-mean-app/backend
+          
+          context: ./crud-dd-task-mean-app/crud-dd-task-mean-app/backend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mean-backend:latest
 
       - name: Build Frontend
         uses: docker/build-push-action@v5
         with:
-          context: ./crud-dd-task-mean-app/frontend
+          
+          context: ./crud-dd-task-mean-app/crud-dd-task-mean-app/frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mean-frontend:latest
