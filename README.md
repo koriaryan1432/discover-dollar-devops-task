@@ -1,3 +1,18 @@
+# DevOps & Deployment Update (Feb 24, 2026)
+This project has been fully containerized and deployed via a professional CI/CD pipeline as per the internship requirements.
+
+### Live Deployment
+- **URL**: http://54.235.6.18/tutorials
+- **Server**: AWS EC2 (Ubuntu 22.04)
+- **Reverse Proxy**: Nginx (Port 80)
+
+### DevOps Deliverables
+1. **Dockerization**: Created multi-stage Dockerfiles for Angular (Frontend) and Node.js (Backend).
+2. **CI/CD Pipeline**: Integrated GitHub Actions to automatically build and push images to Docker Hub on every commit to the main branch.
+3. **Container Orchestration**: Services are deployed as Docker containers, ensuring environment consistency.
+
+
+
 In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
 
 The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
