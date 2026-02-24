@@ -31,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           # This path matches your VS Code sidebar exactly
-          context: crud-dd-task-mean-app/frontend
+          context: /crud-dd-task-mean-app/frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mean-frontend:latest
