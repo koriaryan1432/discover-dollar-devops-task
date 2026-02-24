@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - mean-network
+
+  backend:
+    image: koriaryan1432/mean-backend:latest
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_URL=mongodb://mongodb:27017/tutorial_db
+    depends_on:
+      - mongodb
+    networks:
+      - mean-network
+
+  frontend:
+    image: koriaryan1432/mean-frontend:latest
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - mean-network
+
+networks:
+  mean-network:
+    driver: bridge
